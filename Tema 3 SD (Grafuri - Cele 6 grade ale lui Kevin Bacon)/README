@@ -1,0 +1,35 @@
+314CC_Iliescu_Lucian_Marius
+
+	In implementarea problemei 1 s-a folosit o structura de tip graf cu 
+liste de adiacenta.
+	Pentru usurinta construirii grafului s-a folosit o structura Vector
+care contine un vector de nume, o capacitate si o dimensiune.Atunci cand
+se citeste un nume din fisier, el este introdus in vector si nodul sau
+corespondent din graf va fi indexul sau din vector.
+	Pentru cerinta 1 s-a folosit o functie care calculeaza numarul de
+componente conexe ale grafului.Toate nodurile initial nu sunt vizitate
+apoi se verifica fiecare nod iar daca acesta nu este vizitat se face o
+parcurgere DFS din nodul respectiv si creste numarul de componente conexe.
+	Pentru cerinta 2 se foloseste o coada si un vector de distante.Toate
+nodurile initial nu sunt vizitate.Adaug nodul de inceput in coada si cat
+timp coada nu este goala:se retine primul element din coada, se scoate, si
+parcurg lista lui de adiacenta iar daca acesta nu a fost vizitat, se adauga
+in coada, iar distanta lui va fi egala cu distanta parintelui +1 (pentru ca
+se afla o muchie intre ei).Dupa ce s-a golit coada se returneaza elementul
+de pe pozitia nodului de sfarsit.
+	Pentru cerinta 3 se foloseste algoritmul lui Tarjan.Ideea de baza a
+acestui algoritm ar fi transpunerea grafului ca fiind un arbore,cu radacina
+fiind nodul de inceput.Daca radacina are mai mult de doi fii, aceasta va fi
+un punct de articulatie.Apoi se face apel recursiv pe fiii acesteia, iar daca
+un fiu va fi radacina subarborelui din care face parte atunci devine punct de
+articulatie.
+	In implementare problemei 2 s-a folosit o structura de tip graf cu
+liste de adiacenta si o lista de timpi in care s-au retinut intervalele de
+timp in care se afla un gardian in camera respectiva.S-a folosit si o structura
+Vector care continea un vector de numere, o capacitate si o dimensiune.Atunci
+cand se gasea o iesire aceasta se introducea in vector.Pentru a afla timpul
+minim de la nodul de start la iesiri s-a folosit algoritmul lui Dijkstra, afland
+timpul fata de fiecare camera si se opreste parcurgerea cu goto cand se ajunge
+la iesire.Toti timpi iesirilor se adauga intr-un vector, se afla timpul minim
+din acel vector, dupa se parcurg camerele vizitate anterior iesirii cu timpul
+minim, adaugand camerele intr-un vector de camere parcurse care va afisa drumul.

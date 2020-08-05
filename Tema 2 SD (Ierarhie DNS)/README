@@ -1,0 +1,34 @@
+314CC Iliescu Lucian-Marius
+	In implementarea temei s-au folosit liste simplul inlantuite si un arbore
+general.Intr-un arbore general un nod poate avea un numar variabil de fii,de
+exemplu un nod poate avea 4 fii,altul 3 etc.Pentru a retine adresele fiilor
+a fost folosita o lista simplu inlantuita,prin pointerul first_child ajungeam
+la primul copil,iar ca sa ma deplasez prin fiii nodului am folosit pointerul
+next_child.De exemplu am nodul N cu 10 fii si vrea sa ajung la al doilea fiu:
+		tree *curent_child=N->first_child;
+		curent_child=curent_child->next_child.
+	Pentru citirea datelor din fisier am folosit o lista simplu inlantuita,
+care retinea datele nodurilor din arbore.Initializam arborele cu primul nod din 
+al listei(acela fiind mereu serverul root cu id 0) si stergeam nodul din lista.
+Apoi se parcurge lista si se verifica daca parintele nodului curent se afla in
+arbore,daca da elimin nodul din lista si adaug nodul in arbore.Daca am ajuns la
+final si lista nu e goala,se reparcurge lista pana cand nu mai sunt elemente in
+ea. 
+	Pentru taskul 1 se afiseaza id-ul nodului curent si al copiilor iar apoi 
+se executa apel recursiv pana cand am parcurs tot arborele.
+	Pentru taskul 2 se executa apel recursiv al functie pana cand am ajuns la
+frunze si apoi se adauga adresele copiilor in cele ale parintilor daca ele nu
+se aflau acolo deja.
+	Pentru taskul 3 se gaseste serverul la care este conectat utilizatorul
+se afiseaza id-ul serverului,iar daca adresa nu se afla acolo,aceasta se adauga
+la server si se va cauta in parinti.
+	Pentru bonus se inlocuieste id-ul serverului la care erau conectati
+utilizatorii cu cel al parintelui.Se adauga primul copil al serverului in lista
+de fii a parintelui si se sterge din lista de fii serverul defect.
+	La taskurile 3 si bonus am citit comanda ca un sir de caractere cu un
+caracter ("%s"),deoarece cand citeam cu "%c" nu mergea.
+	Memory leakurile provin de la erori de genul "Invalid read of size 8"
+sau "Invalid read of size 1" etc.In rest toata memoria alocata a fost eliberata.
+	Feedback: O tema frumoasa care are la baza implementarii un concept
+interesant,iar cerintele au fost scurte si la obiect.
+	
